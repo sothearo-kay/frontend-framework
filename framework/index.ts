@@ -1,7 +1,7 @@
-import { init as initPatch } from "snabbdom";
+import { init as initPatch, eventListenersModule } from "snabbdom";
 import type { Element } from "./element";
 
-const patch = initPatch([]);
+const patch = initPatch([eventListenersModule]);
 
 export const init = (selector: string, component: Element) => {
   const app = document.querySelector(selector);

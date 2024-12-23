@@ -1,4 +1,5 @@
 import { div } from "@framework/element";
+import { onClick } from "@framework/event";
 
 interface Props {
   firstName: string;
@@ -6,4 +7,4 @@ interface Props {
 }
 
 export const User = ({ firstName, lastName }: Props) =>
-  div`Hello ${firstName} ${lastName} !`;
+  div`${onClick(() => console.log(firstName))} Hello ${firstName} ${lastName} !`;
