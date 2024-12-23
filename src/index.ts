@@ -1,5 +1,5 @@
-import { init } from "./framework";
-import { User } from "./src/user";
+import { init } from "../framework";
+import { User } from "./components/user";
 
 const firstName = "Kay";
 const lastName = "Sothearo";

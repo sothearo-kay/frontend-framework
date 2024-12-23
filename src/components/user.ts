@@ -1,4 +1,4 @@
-import { div } from "../framework/element";
+import { div } from "@framework/element";
 
 interface Props {
   firstName: string;

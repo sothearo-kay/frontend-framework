@@ -2,7 +2,7 @@
   "name": "frontend-framework",
   "version": "1.0.0",
   "description": "A custom frontend framework",
-  "main": "index.ts",
+  "main": "./src/index.ts",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,6 +17,10 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.7.2",
-    "vite": "^6.0.5"
+    "vite": "^6.0.5",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "dependencies": {
+    "snabbdom": "^3.6.2"
   }
 }

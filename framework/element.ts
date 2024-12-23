@@ -1,15 +1,23 @@
+import { h, VNode } from "snabbdom";
+
 export interface Element {
   type: string;
-  template: string;
+  template: VNode;
 }
 
 const createElement =
   (tagName: string) =>
-  (strings: TemplateStringsArray, ...args: string[]): Element => ({
-    type: tagName,
-    template: strings.reduce(
-      (acc, currentString, index) => acc + currentString + (args[index] || ""),
-      "",
+  (strings: TemplateStringsArray, ...args: string[]) => ({
+    type: "element",
+    template: h(
+      tagName,
+      {},
+
+      strings.reduce(
+        (acc, currentString, index) =>
+          acc + currentString + (args[index] || ""),
+        "",
+      ),
     ),
   });
 
