@@ -1,7 +1,4 @@
 import { init } from "../framework";
-import { User } from "./components/user";
+import { Counter } from "./components/counter";
 
-const firstName = "Kay";
-const lastName = "Sothearo";
-
-init("#app", User({ firstName, lastName }));
+init("#app", Counter({ count: 10 }));

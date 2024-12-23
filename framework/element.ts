@@ -1,7 +1,7 @@
 import { h, VNode } from "snabbdom";
 import { EventArg, EventHandler } from "./event";
 
-type Argument = string | EventArg;
+type Argument<T> = T | EventArg;
 
 export interface Element {
   type: string;
@@ -13,12 +13,12 @@ const initialState = {
   on: {},
 };
 
-const isEventArg = (arg: Argument): arg is EventArg => {
+const isEventArg = <T>(arg: Argument<T>): arg is EventArg => {
   return typeof arg === "object" && arg !== null && "type" in arg;
 };
 
 const createReducer =
-  (args: Argument[]) =>
+  <T>(args: Argument<T>[]) =>
   (
     acc: { template: string; on: Record<string, EventHandler> },
     currentString: string,
@@ -27,7 +27,6 @@ const createReducer =
     const currentArg = args[index];
 
     if (isEventArg(currentArg) && currentArg.type === "event") {
-      console.log(currentArg.click);
       return { ...acc, on: { click: currentArg.click } };
     }
 
@@ -39,7 +38,7 @@ const createReducer =
 
 const createElement =
   (tagName: string) =>
-  (strings: TemplateStringsArray, ...args: Argument[]): Element => {
+  <T>(strings: TemplateStringsArray, ...args: Argument<T>[]): Element => {
     const { template, on } = strings.reduce(createReducer(args), initialState);
 
     return {
@@ -50,6 +49,7 @@ const createElement =
 
 export const div = createElement("div");
 export const p = createElement("p");
+export const button = createElement("button");
 
 /*
 div`Hello ${firstName} ${lastName} !`;
