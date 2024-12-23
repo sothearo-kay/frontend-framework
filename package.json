@@ -1,0 +1,22 @@
+{
+  "name": "frontend-framework",
+  "version": "1.0.0",
+  "description": "A custom frontend framework",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "keywords": [
+    "frontend",
+    "framework"
+  ],
+  "author": "sothearo",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  }
+}
