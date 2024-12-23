@@ -8,8 +8,7 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
-      "@src/*": ["./src/*"],
-      "@framework/*": ["./framework/*"]
+      "@/*": ["./*"]
     }
   },
   "include": ["src/**/*.ts", "framework/*.ts"],

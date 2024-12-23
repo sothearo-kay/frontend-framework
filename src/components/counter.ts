@@ -1,6 +1,6 @@
-import { button } from "@framework/element";
-import { onClick } from "@framework/event";
-import { createComponent } from "@framework/index";
+import { button } from "@/framework/element";
+import { onClick } from "@/framework/event";
+import { createComponent } from "@/framework";
 
 interface State {
   count: number;
